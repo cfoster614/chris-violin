@@ -1,0 +1,437 @@
+.menu-toggle {
+  display: none;
+}
+.mobile-logo,
+.mobile-name {
+  display: none;
+}
+
+.feature-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* -------------------------------------------
+              +++++++ HEADER +++++++
+    ------------------------------------------  */
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  html,
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  #header-subtitle {
+    display: none;
+  }
+
+  .home-page .mobile-name {
+    display: none;
+  }
+
+  .site-header,
+  .header,
+  .hero,
+  .hero-text,
+  .hero-photo {
+    width: 100%;
+    max-width: none;
+  }
+
+  .desktop-logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: inline-block;
+  }
+
+  .header-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .mobile-name {
+    display: block;
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+  }
+
+  .site-header .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    gap: 0;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f2026;
+    z-index: 1000;
+  }
+  
+  .monogram {
+    width: 42px;
+    height: 42px;
+    font-size: 2.2rem;
+  }
+
+  .site-header .navbar.active {
+    display: flex;
+  }
+
+  .site-header .navbar a {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 0;
+    color: #f2f0f1;
+  }
+
+  .site-header .navbar a::after {
+    display: none;
+  }
+
+  .site-header h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    margin: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background-color: #f2f0f1;
+  }
+
+  .menu-toggle span {
+    width: 28px;
+    height: 2px;
+    background-color: #f2f0f1;
+  }
+
+  .logo {
+    white-space: nowrap;
+  }
+
+  /* -------------------------------------------
+              +++++++ HERO +++++++
+    ------------------------------------------  */
+  .hero {
+    position: relative;
+    display: block;
+    height: calc(100vh - 70px);
+    min-height: 650px;
+    overflow: hidden;
+  }
+
+  /* Photo fills the entire hero */
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 38% center;
+  }
+
+  /* Dark gradient over the photo */
+  .hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0.15) 30%,
+      rgba(0, 0, 0, 0.55) 60%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Text sits on top of photo */
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 16rem;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  .hero-content {
+    width: 82%;
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: left;
+
+    /* Extra gradient directly behind text */
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0)
+    );
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+    margin: 0 0 1rem;
+    color: white;
+  }
+
+  .hero-text h2 {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+    color: #995528;
+  }
+
+  .hero-text p {
+    max-width: 30ch;
+    margin: 0 0 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: white;
+  }
+
+  .accent-line {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* -------------------------------------------
+            +++++++ FEATURES +++++++
+    ------------------------------------------  */
+
+  .features {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column-reverse;
+  }
+
+  .feature {
+    display: none;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    border-right: 2px solid #ddd;
+    border-left: 2px solid #ddd; /* Fancy divider line for the features row */
+  }
+
+  .feature.active {
+    display: flex;
+  }
+
+  .feature svg {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 1rem;
+  }
+
+  .feature h2 {
+    margin-bottom: 1rem;
+  }
+
+  .feature p {
+    margin: 0 auto;
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  .feature-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .feature-prev,
+  .feature-next {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #995528;
+  }
+
+  .feature-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .feature-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #ccc;
+  }
+
+  .feature-dot.active {
+    background-color: #995528;
+  }
+  .paragraph-picture {
+    flex-direction: column;
+    width: 82%;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  /* -------------------------------------------
+            +++++++ ABOUT +++++++
+    ------------------------------------------  */
+
+  .about {
+    width: 100%;
+    flex: none;
+  }
+
+  .about h1 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .about p {
+    width: 100%;
+    line-height: 1.7;
+  }
+
+  .about button {
+    display: block;
+    margin: 1.5rem auto 0;
+  }
+
+  .about-picture {
+    width: 100%;
+    flex: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-picture img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  /* -------------------------------------------
+            +++++++ MEDIA +++++++
+    ------------------------------------------  */
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .video-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .youtube-video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .video-card h2,
+  .video-card p {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .video-card h2 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .video-card p {
+    line-height: 1.6;
+  }
+
+  .media-section {
+    width: 100%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .media-section h1 {
+    max-width: 70%;
+    text-align: center;
+  }
+ /* -------------------------------------------
+            +++++++ LESSONS +++++++
+    ------------------------------------------  */
+  .teaching {
+    flex-direction: column;
+    gap:0;
+  }
+
+  /* -------------------------------------------
+            +++++++ FOOTER +++++++
+    ------------------------------------------  */
+
+  #footer-nav {
+    flex-wrap: wrap;
+  }
+
+  #footer-nav a {
+    font-size: smaller;
+  }
+}
